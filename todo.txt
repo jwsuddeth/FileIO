@@ -1,0 +1,54 @@
+File input and output notes:
+
+Sequential Access example
+
+Direct Access Example
+
+
+
+Creating a File – See pseudocode for examples creating a .dat file and variable in the code
+
+Pseudocode example writing a file
+
+C++ example writing a file
+
+
+Example opening input file with append mode 
+
+
+Processing Files:
+
+Using a loop to process files:
+	Example creating a sales file pseudocode
+	Example reading and displaying a sales file with while loop while file.good()
+
+
+Processing Records:
+ Show their pseudocode example using a record with name, ID, department
+
+Show C++ example with ID, name, expense, expense type
+
+
+Control-Break Logic:
+
+Assume we have Store Number, State, Sales in a file. File is ordered by State.
+We want to produce a sales report that shows the total sales for each state.
+
+C++ Examples Needed:
+
+Open a file for writing and write a line of text.
+Open a file for writing in append mode and write a line of text.
+Open a file for writing and write some binary data
+
+Open a file for reading and read a line of text
+Open a file for reading and read the entire file
+Open a file for binary reading and read the binary data
+
+
+Define a struct for structured data and use it to write data
+Use the struct to read the data back out
+show how to use direct access to access a record
+
+Control break logic – Produce an expense report
+
+

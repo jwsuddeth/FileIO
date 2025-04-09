@@ -11,9 +11,9 @@ void readFile();
 
 int main()
 {
-    //createFile();
+    createFile();
 
-    readFile();
+    //readFile();
 
     return 0;
 }

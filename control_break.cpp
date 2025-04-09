@@ -30,7 +30,25 @@ int main(int argc, const char * argv[])
 
     double deptTotal = 0.0;
 
+    // add a grand total variable... 
+    double grandTotal = 0.0;
+
+
     cout << "\n\nExpense Report By Department\n\n";
+
+    cout << left
+	    << setw(20)
+	    << "Name"
+	    << setw(20)
+	    << "Dept"
+	    << setw(6)
+	    << "Amt"
+	    << setw(50)
+	    << "Description"
+	    << "\n"
+	    << string(85, '=') 
+	    << "\n\n";
+    
 
     while(infile.read(reinterpret_cast<char *>(&input), sizeof(Expense)))
     {
@@ -41,9 +59,11 @@ int main(int argc, const char * argv[])
             // if we do then we print our department total line then clear it
             if (strlen(currentDept) > 0)
             {
-                cout << "=========================================\n";
-                cout << "Department Total: " << deptTotal << endl << endl << endl;
+                cout << string(85, '-') << "\n";
+                cout << "Department Total: " << deptTotal << "\n\n\n"; 
 
+		// add the deptTotal into the grand total
+		grandTotal += deptTotal;
             }
             deptTotal = 0.0;
             strcpy(currentDept, input.department);
@@ -53,12 +73,22 @@ int main(int argc, const char * argv[])
         deptTotal += input.amount;
 
         // print the line item
-        cout << input.name << "\t" << input.department << "\t" << input.amount << "\t" << input.description << endl;
+        cout << left
+	       << setw(20) << input.name << setw(20) << input.department << setw(6) << input.amount << setw(50) 
+	       	<< input.description << endl;
     }
 
     // write the last summary line
-    cout << "=========================================\n";
-    cout << "Department Total: " << deptTotal << endl << endl << endl;
+    cout << string(85, '-') << "\n";
+    cout << "Department Total: " << deptTotal << endl;
+
+
+    // add the deptTotal into the grand total
+    grandTotal += deptTotal;
+
+   // display the grand total
+   cout << string(85, '=') << "\n\n";
+   cout << "Grand Total:\t" << grandTotal << endl;
 
     infile.close();
     return 0;
